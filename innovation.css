@@ -23,7 +23,7 @@
 	
 	/* Block */
 	
-	blockquote { color: #bbb; font: 250%/1.2 'PFHandbookProRegular'; margin: 1em 0; text-transform: uppercase; }
+	blockquote { color: #ccc; font: 250%/1.2 'PFHandbookProRegular'; margin: 1em 0; text-transform: uppercase; }
 	
 	h1,
 	h2,
@@ -63,7 +63,6 @@
 	a:hover,
 	#header,
 	#nav,
-	#prev,
 	.share,
 	#footer,
 	.background { -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; transition: all .5s ease-in-out !important; }
@@ -75,14 +74,13 @@
 	
 	.section { border-bottom: 1px dotted #e5e5e5; padding: 20px 0; position: relative; }
 	.section strong, .section em { display: block; }
-	
-	#arrows li { width: 40px; height: 80px; background: #eee; position: absolute; left: 0; }
+	.section em { color: #ccc; font: normal 16px 'PFHandbookProRegular'; text-transform: uppercase; }
 	
 	/* Header */
 	
 	#header { height: 39px; width: 100%; background: #fff; background: rgba(255,255,255,.9); border-bottom: 1px solid #e5e5e5; position: fixed; top: 0; left: 0; text-transform: uppercase; z-index: 800; }
 	#header .logo { float: left; font: 18px/19px 'PFHandbookProBold'; margin: 0; }
-	#header .logo a { height: 19px; background: url(../images/mchc-mark.jpg) no-repeat 20px 11px; color: #333; padding: 10px 0 10px 65px; }
+	#header .logo a { height: 19px; background: url(images/sprites.png) no-repeat -230px 0; color: #333; padding: 10px 0 10px 65px; }
 	#header .title { color: #3cc; float: left; font: 18px/19px 'PFHandbookProBold'; margin: 0; padding: 10px 20px; }
 	#header .subtitle { color: #ccc; float: right; font: 15px/19px 'PFHandbookProBold'; margin: 0; padding: 10px; }
 	#header .utility { float: right; font: 15px/19px 'PFHandbookProBold'; margin: 0 10px 0 0; }
@@ -100,14 +98,20 @@
 	
 	#content { max-width: 800px; margin: 0 auto; padding: 1200px 80px 0; position: relative; z-index: 200; }
 	#content img { width: 100%; }
-	#content li { margin: 0 0 0 1.25em; }
+	#content li { list-style-type: none; }
+	#content li li { list-style-type: disc; margin: 0 0 0 1.25em; }
+	
+	/* Buttons */
 	
 	#prev,
-	#next { width: 90px; height: 30px; background: #e5e5e5; background: rgba(229,229,229,.9); display: block; margin: 0 0 0 -45px; position: fixed; left: 50%; text-indent: -9999px; }
-	#prev:hover,
-	#next:hover { background: #3cc; background: rgba(51,204,204,.9); }
-	#prev { opacity: 1; top: 40px; z-index: 900; }
-	#next { bottom: 0; z-index: 900; }
+	#next { width: 100px; height: 40px; background: transparent url(images/sprites.png) no-repeat; display: block; margin: 0 0 0 -45px; position: fixed; left: 50%; text-indent: -9999px;
+		-webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
+	#prev { background-position: -230px -50px; opacity: 1; top: 40px; z-index: 900; }
+	#prev:hover { background-position: -230px -140px; }
+	#next { background-position: -230px -90px; bottom: 0; z-index: 900; }
+	#next:hover { background-position: -230px -180px; }
+	#back-to-top { color: #e5e5e5; color: rgba(0,0,0,.1); display: block; font: 15px/19px 'PFHandbookProBold'; position: fixed; top: 60px; right: 20px; text-transform: uppercase; z-index: 600; }
+	#back-to-top:hover { color: #3cc; }
 	
 	/* Share */
 	
@@ -123,6 +127,17 @@
 	#footer { height: 39px; width: 100%; background: #fff; background: rgba(255,255,255,.9); border-top: 1px solid #e5e5e5; display: none; position: fixed; left: 0; text-transform: uppercase; z-index: 700; }
 	#footer .share { color: #9c3; display: block; float: right; font: 15px/19px 'PFHandbookProBold'; padding: 10px 20px; }
 	#footer .share:hover { background: #9c3; color: #fff; }
+	
+	/* Arrows */
+	#arrows li { width: 30px; height: 80px; background: transparent url(images/sprites.png) no-repeat; position: absolute; left: 0; }
+	#arrows li.letter,
+	#arrows li.board { background-position: 0 -100px; }
+	#arrows li.communication,
+	#arrows li.financials { background-position: -40px -100px; }
+	#arrows li.caring,
+	#arrows li.appendices { background-position: -80px -100px; }
+	#arrows li.business { background-position: -120px -100px; }
+	#arrows li.workforce { background-position: -160px -100px; }
 
 
 /* 3. SPECIFIC CONTENT
@@ -134,11 +149,12 @@
 	.top #nav { display: none !important; }
 	.top #content { z-index: 0; }
 	.top #prev { opacity: 0; }
+	.top #back-to-top { display: none; }
 	.top #footer { bottom: -40px; }
 	
 	#cover { width: 100%; height: 100%; overflow: hidden; position: absolute; z-index: 100; }
 	#cover .logo { width: 225px; height: 95px; margin: 0; position: absolute; top: 0; left: 0; z-index: 100; }
-	#cover .logo a { height: 95px; background: url(images/mchc-logo.jpg) no-repeat 20px 20px; }
+	#cover .logo a { height: 95px; background: url(images/sprites.png) no-repeat 0 0; }
 	#cover .logo a abbr { display: none; }
 	#cover .title { color: #32363b; font: 450%/1 'PFHandbookProBold'; letter-spacing: -0.05em; margin: -36px 0 0; position: absolute; top: 50%; left: 50%; z-index: 100; }
 	#cover .subtitle { color: #3cc; font: 200%/1 'PFHandbookProRegular'; padding: 0 0 0 2px; margin: 36px 0 0; position: absolute; top: 50%; left: 50%; z-index: 100; }
@@ -165,10 +181,11 @@
 	
 	/* Letter */
 	
-	#letter .column { width: 50%; float: left; text-align: center; }
+	#letter .column { width: 400px; float: left; text-align: center; }
 	#letter .column { text-align: center; }
 	#letter .column p,
 	#letter .column h2 { margin: .25em 0; text-transform: none; }
+	#letter .column .circle { margin: 0 50px 20px; }
 	
 	/* Board */
 	
@@ -192,6 +209,9 @@
 	#board .directors h2 { font: 150%/1 'PFHandbookProBold'; text-transform: none; }
 	#board .others { margin: 80px 0 0 0; }
 	#board h3 { color: #ccc; font: 18px/19px 'PFHandbookProBold'; margin: 1.5em 0 0; }
+	
+	#appendices p { margin: 0 0 .75em; }
+
 
 /* 4. MEDIA QUERIES
 ----------------------------------------------------------------------------- */
@@ -200,6 +220,8 @@
 
 	#cover .title { font-size: 400%; }
 	#content { max-width: 640px; }
+	#letter .column { width: 320px; }
+	#letter .column .circle { margin: 0 10px 20px; }
 
 }
 
@@ -212,6 +234,8 @@
 	#cover .nav { margin: 75px 0 0; top: 25%; left: 15%; text-align: left; }
 	#nav { margin: 0; left: 20px; }
 	#footer { display: block; bottom: 0; }
+	#letter .column { float: none; margin: 0 auto 20px; }
+	#next { bottom: 40px; }
 
 }
 
@@ -233,7 +257,7 @@
 	h2,
 	h3 { margin: 1em 0 .5em; }
 	.section { margin: 0; padding: 60px 0 0; }
-	#header .logo a { background-position: 10px 11px; padding: 10px 0 10px 55px; }
+	#header .logo a { background-position: -240px 0; padding: 10px 0 10px 55px; }
 	#header .utility { margin: 0; }
 	#nav { left: 10px; }
 	#cover .logo,
@@ -244,6 +268,7 @@
 	#cover .background { width: 230px; height: 600px; margin: -300px 0 0; right: -30px; }
 	#content { font-size: 75%; padding: 640px 15px 50px; }
 	#footer .share { padding: 10px; }
+	#arrows { display: none; }
 
 }
 
@@ -268,4 +293,4 @@
 /* 5. DEVELOPMENT
 ----------------------------------------------------------------------------- */
 
-#load { width: 100%; height: 100%; background: #000 url(../images/loading.gif) no-repeat center; display: none; opacity: .8; position: fixed; top: 0; left: 0; z-index: 1000; }
+#load { width: 100%; height: 100%; background: #000 url(images/loading.gif) no-repeat center; display: none; opacity: .8; position: fixed; top: 0; left: 0; z-index: 1000; }

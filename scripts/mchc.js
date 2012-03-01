@@ -23,7 +23,8 @@
 			$('#header h1, #header h2, #header h3, #header .utility').clone().appendTo('#cover');
 			$('#header .share').clone().appendTo('#footer');
 			
-			// Create prev + next buttons
+			// Create navigation buttons
+			$('<a />', {'href': '#', 'id': 'back-to-top', 'text': 'Back to Top'}).appendTo('body');
 			$('<a />', {'href': '#', 'id': 'prev', 'text': 'Prev'}).appendTo('body');
 			$('<a />', {'href': '#', 'id': 'next', 'text': 'Next'}).appendTo('body');
 			
@@ -50,8 +51,20 @@
 			} else {
 				$('#nav').css('top','').css('bottom',10);
 			}
+			
+			if (MCHC.loaded){
+				if ($('#appendices').offset().top !== ($('#arrows li.appendices').offset().top-75)){
+					console.log('fire');
+					$('.section').each(function(){
+						id = $(this).attr('id');
+						$('#arrows li[class='+id+']').css('top', $(this).offset().top+75);
+					});
+				}
+			}
 		
 		},
+		
+		loaded: false,
 		
 		current: 'cover',
 		
@@ -151,6 +164,11 @@
 			}
 		});
 		
+		$('#back-to-top').click(function(e){
+			e.preventDefault();
+			MCHC.update('cover', true);
+		});
+		
 		$('.share').click(function(e){
 			e.preventDefault();
 			$('#share').show();
@@ -165,8 +183,9 @@
 			// Create side arrows MOVE TO MCHC ARROWS + FIRE ON LOAD/RESIZE use index selector offset top on sections
 			$('<ol />', {'id': 'arrows'}).appendTo('body');
 			$('.section').each(function(){
-				$('<li />').css('top', $(this).offset().top).appendTo($('#arrows'));
+				$('<li />', {'class': $(this).attr('id')}).css('top', $(this).offset().top+75).appendTo($('#arrows'));
 			});
+			MCHC.loaded = true;
 		});
 		
 		$(window).resize(function(){
