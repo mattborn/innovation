@@ -23,7 +23,7 @@
 	
 	/* Block */
 	
-	blockquote { color: #ccc; font: 250%/1.2 'PFHandbookProRegular'; margin: 1em 0; text-transform: uppercase; }
+	blockquote { color: #b2b2b2; font: 250%/1.2 'PFHandbookProRegular'; margin: 1em 0; text-transform: uppercase; }
 	
 	h1,
 	h2,
@@ -74,7 +74,6 @@
 	
 	.section { border-bottom: 1px dotted #e5e5e5; padding: 20px 0; position: relative; }
 	.section strong, .section em { display: block; }
-	.section em { color: #ccc; font: normal 16px 'PFHandbookProRegular'; text-transform: uppercase; }
 	
 	/* Header */
 	
@@ -82,7 +81,7 @@
 	#header .logo { float: left; font: 18px/19px 'PFHandbookProBold'; margin: 0; }
 	#header .logo a { height: 19px; background: url(images/sprites.png) no-repeat -230px 0; color: #333; padding: 10px 0 10px 65px; }
 	#header .title { color: #3cc; float: left; font: 18px/19px 'PFHandbookProBold'; margin: 0; padding: 10px 20px; }
-	#header .subtitle { color: #ccc; float: right; font: 15px/19px 'PFHandbookProBold'; margin: 0; padding: 10px; }
+	#header .subtitle { color: #b2b2b2; float: right; font: 15px/19px 'PFHandbookProBold'; margin: 0; padding: 10px; }
 	#header .utility { float: right; font: 15px/19px 'PFHandbookProBold'; margin: 0 10px 0 0; }
 	#header .utility a { display: block; float: left; padding: 10px; }
 	#header .share { color: #9c3; }
@@ -160,7 +159,7 @@
 	#cover .subtitle { color: #3cc; font: 200%/1 'PFHandbookProRegular'; padding: 0 0 0 2px; margin: 36px 0 0; position: absolute; top: 50%; left: 50%; z-index: 100; }
 	#cover .nav { list-style-type: none; margin: -124px 0 0 -182px; position: absolute; top: 50%; left: 25%; text-align: right; z-index: 100; }
 	#cover .nav li { font: 150%/1.5 'PFHandbookProRegular'; text-transform: uppercase }
-	#cover .nav li a { color: #ccc; }
+	#cover .nav li a { color: #b2b2b2; }
 	#cover .nav li a:hover { color: #3cc; }
 	#cover .utility { font: 15px/19px 'PFHandbookProBold'; position: absolute; bottom: 20px; left: 20px; text-transform: uppercase; z-index: 100; }
 	#cover .utility a { color: #fff; border-radius: 3px; float: left; padding: 5px 10px; }
@@ -208,9 +207,10 @@
 	#board .directors h2 { margin: 0; }
 	#board .directors h2 { font: 150%/1 'PFHandbookProBold'; text-transform: none; }
 	#board .others { margin: 80px 0 0 0; }
-	#board h3 { color: #ccc; font: 18px/19px 'PFHandbookProBold'; margin: 1.5em 0 0; }
+	#board h3 { color: #b2b2b2; font: 18px/19px 'PFHandbookProBold'; margin: 1.5em 0 0; }
 	
 	#appendices p { margin: 0 0 .75em; }
+	#appendices em { color: #b2b2b2; font: normal 16px 'PFHandbookProRegular'; text-transform: uppercase; }
 
 
 /* 4. MEDIA QUERIES
